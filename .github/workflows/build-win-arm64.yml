@@ -23,10 +23,9 @@ jobs:
           make -j16
           make install
           
-      - name: archive arm64
+      - name: Archive arm64
         run: |
-          mkdir output
-          readlink -f output
+          mkdir -p output
           cp ${{ github.workspace }}/local/bin/* output
           cd output
           zip -r -D ../ffmpeg-win-arm64.zip .
@@ -80,10 +79,9 @@ jobs:
           make -j16
           make install
           
-      - name: archive x64
+      - name: Archive x64
         run: |
-          mkdir output
-          readlink -f output
+          mkdir -p output
           cp ${{ github.workspace }}/local/bin/* output
           cd output
           zip -r -D ../ffmpeg-win-x64.zip .
